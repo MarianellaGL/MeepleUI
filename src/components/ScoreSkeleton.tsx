@@ -1,21 +1,39 @@
-import { StyleSheet, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 import { tokens } from '../theme';
+import { useReducedMotion } from '../useReducedMotion';
 
 export type ScoreSkeletonProps = { variant?: 'text' | 'list' | 'card' };
 
 export function ScoreSkeleton({ variant = 'text' }: ScoreSkeletonProps) {
-  if (variant === 'text') return <View accessibilityLabel="Cargando" style={[styles.bar, { width: '72%' }]} />;
+  const [opacity] = useState(() => new Animated.Value(1));
+  const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (reducedMotion) {
+      opacity.setValue(1);
+      return;
+    }
+    const pulse = Animated.loop(Animated.sequence([
+      Animated.timing(opacity, { toValue: 0.5, duration: 700, useNativeDriver: true }),
+      Animated.timing(opacity, { toValue: 1, duration: 700, useNativeDriver: true }),
+    ]));
+    pulse.start();
+    return () => pulse.stop();
+  }, [opacity, reducedMotion]);
+
+  if (variant === 'text') return <Animated.View accessibilityLabel="Cargando" style={[styles.bar, { width: '72%', opacity }]} />;
   if (variant === 'list') return <View accessibilityLabel="Cargando lista" style={styles.list}>
     {[0, 1, 2].map((item) => <View key={item} style={styles.row}>
-      <View style={styles.circle} />
-      <View style={styles.lines}><View style={[styles.bar, { width: '80%' }]} /><View style={[styles.bar, { width: '55%' }]} /></View>
+      <Animated.View style={[styles.circle, { opacity }]} />
+      <View style={styles.lines}><Animated.View style={[styles.bar, { width: '80%', opacity }]} /><Animated.View style={[styles.bar, { width: '55%', opacity }]} /></View>
     </View>)}
   </View>;
   return <View accessibilityLabel="Cargando tarjeta" style={styles.card}>
-    <View style={[styles.bar, { width: '35%' }]} />
-    <View style={[styles.bar, { width: '75%', height: 28 }]} />
-    <View style={[styles.bar, { width: '95%' }]} />
-    <View style={[styles.bar, { width: '50%' }]} />
+    <Animated.View style={[styles.bar, { width: '35%', opacity }]} />
+    <Animated.View style={[styles.bar, { width: '75%', height: 28, opacity }]} />
+    <Animated.View style={[styles.bar, { width: '95%', opacity }]} />
+    <Animated.View style={[styles.bar, { width: '50%', opacity }]} />
   </View>;
 }
 

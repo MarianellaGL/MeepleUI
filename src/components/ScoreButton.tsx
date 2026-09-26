@@ -1,7 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { Animated, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 
 import { tokens } from '../theme';
+import { useReducedMotion } from '../useReducedMotion';
 
 export type ScoreButtonProps = {
   label: string;
@@ -21,13 +23,29 @@ export function ScoreButton({
   onPress,
 }: ScoreButtonProps) {
   const outlined = variant === 'secondary';
+  const [scale] = useState(() => new Animated.Value(1));
+  const reducedMotion = useReducedMotion();
+
+  function animatePress(toValue: number) {
+    if (reducedMotion || disabled) return;
+    Animated.spring(scale, {
+      toValue,
+      speed: 28,
+      bounciness: 2,
+      useNativeDriver: true,
+    }).start();
+  }
+
   return (
+    <Animated.View style={{ transform: [{ scale }] }}>
     <Button
       mode={outlined ? 'outlined' : 'contained'}
       icon={icon}
       disabled={disabled}
       loading={loading}
       onPress={onPress}
+      onPressIn={() => animatePress(0.97)}
+      onPressOut={() => animatePress(1)}
       buttonColor={variant === 'danger' ? tokens.color.redDark : tokens.color.red}
       textColor={outlined ? tokens.color.gold : tokens.color.canvas}
       style={[styles.button, outlined && styles.outlined]}
@@ -36,6 +54,7 @@ export function ScoreButton({
     >
       {label}
     </Button>
+    </Animated.View>
   );
 }
 

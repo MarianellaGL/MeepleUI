@@ -7,6 +7,7 @@
     "@expo-google-fonts/cinzel": "^0.4.2",
     "@expo-google-fonts/cinzel-decorative": "^0.4.1",
     "@expo-google-fonts/inter": "^0.4.2",
+    "@expo/metro-runtime": "~57.0.16",
     "@expo/vector-icons": "^15.1.1",
     "@gorhom/bottom-sheet": "5.2.14",
     "@react-native-async-storage/async-storage": "2.2.0",
@@ -28,11 +29,14 @@
     "react-native-reanimated": "4.5.1",
     "react-native-safe-area-context": "~5.7.0",
     "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.3",
     "react-native-worklets": "0.10.1",
     "storybook": "10.6.0"
   },
   "devDependencies": {
+    "@storybook/react-native-web-vite": "10.6.0",
     "@types/react": "~19.2.2",
+    "chromatic": "^18.9.5",
     "eslint": "^9.39.5",
     "eslint-config-expo": "~57.0.2",
     "typescript": "~6.0.3"
@@ -45,6 +49,11 @@
     "storybook": "cross-env STORYBOOK_ENABLED=true STORYBOOK_SERVER=false expo start --port 8083",
     "storybook:ios": "cross-env STORYBOOK_ENABLED=true STORYBOOK_SERVER=false expo start --port 8083 --ios",
     "storybook:android": "cross-env STORYBOOK_ENABLED=true STORYBOOK_SERVER=false expo start --port 8083 --android",
+    "storybook:web": "storybook dev -c .storybook-web -p 6006",
+    "build:storybook:web": "storybook build -c .storybook-web -o dist",
+    "build-storybook": "pnpm build:storybook:web",
+    "chromatic": "chromatic --build-script-name build-storybook",
+    "build:package": "tsc -p tsconfig.package.json && node scripts/stage-package.mjs",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit"
   },

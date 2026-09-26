@@ -1,7 +1,9 @@
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Animated, Pressable, StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 
 import { tokens } from '../theme';
+import { useReducedMotion } from '../useReducedMotion';
 
 export type ScoreStepperProps = {
   player: string;
@@ -15,6 +17,18 @@ export type ScoreStepperProps = {
 
 export function ScoreStepper({ player, detail, value, onChange, min = 0, max = 999, disabled = false }: ScoreStepperProps) {
   const adjust = (delta: number) => onChange?.(Math.max(min, Math.min(max, value + delta)));
+  const [scale] = useState(() => new Animated.Value(1));
+  const previous = useRef(value);
+  const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (previous.current !== value && !reducedMotion) {
+      scale.setValue(1.16);
+      Animated.spring(scale, { toValue: 1, speed: 24, bounciness: 4, useNativeDriver: true }).start();
+    }
+    previous.current = value;
+  }, [value, reducedMotion, scale]);
+
   return (
     <View style={[styles.row, disabled && styles.disabled]}>
       <View style={styles.person}>
@@ -28,7 +42,9 @@ export function ScoreStepper({ player, detail, value, onChange, min = 0, max = 9
         onPress={() => adjust(-1)}
         style={styles.control}
       ><Text style={styles.symbol}>−</Text></Pressable>
-      <Text accessibilityLabel={`${value} puntos`} style={styles.value}>{value}</Text>
+      <Animated.View style={{ transform: [{ scale }] }}>
+        <Text accessibilityLabel={`${value} puntos`} style={styles.value}>{value}</Text>
+      </Animated.View>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`Sumar un punto a ${player}`}

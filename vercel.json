@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm build:storybook:web",
+  "outputDirectory": "dist",
+  "framework": null,
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/:path*", "destination": "/" }]
+}

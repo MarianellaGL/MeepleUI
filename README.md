@@ -34,14 +34,14 @@ No incluyas el token en el comando, en `package.json` ni en Git. Chromatic usa `
 
 ## Preparar el paquete npm
 
-El nombre reservado para publicar es `@marianellagl/scoreui`. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
+El paquete se publica como `@decodadev02/scoreui`. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
 
 ```bash
 pnpm build:package
 pnpm --dir package-dist pack --pack-destination ../package-artifacts
 ```
 
-Revisá el contenido del `.tgz` en `package-artifacts/`. Para publicarlo desde tu cuenta npm (el usuario o la organización debe controlar `@marianellagl`):
+Revisá el contenido del `.tgz` en `package-artifacts/`. Para publicarlo desde tu cuenta npm `decodadev02`:
 
 Si guardaste `PUBLIC_NPM_ACCESS_TOKEN` en un `.env` local, publicalo con:
 
@@ -49,7 +49,7 @@ Si guardaste `PUBLIC_NPM_ACCESS_TOKEN` en un `.env` local, publicalo con:
 pnpm publish:package
 ```
 
-El script carga `.env` solo para ese proceso y usa el token mediante una referencia en `.npmrc`; `.env` está ignorado por Git. Si preferís iniciar sesión de forma interactiva, también podés usar `pnpm login` y `pnpm --dir package-dist publish --access public --no-git-checks`.
+El script carga `.env` solo para ese proceso y pasa el token a pnpm como variable de entorno limitada a `registry.npmjs.org`; `.env` está ignorado por Git. Si preferís iniciar sesión de forma interactiva, también podés usar `pnpm login` y `pnpm --dir package-dist publish --access public --no-git-checks`.
 
 La publicación puede pedir 2FA. Para la siguiente versión, incrementá `version` en `package/package.json`, volvé a ejecutar `pnpm build:package` y repetí el publish. El paquete apunta a Expo SDK 57 y React Native 0.86.
 

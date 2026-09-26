@@ -1,4 +1,4 @@
-# @marianellagl/scoreui
+# @decodadev02/scoreui
 
 Componentes de Tablescore para aplicaciones Expo y React Native con React Native Paper.
 
@@ -7,14 +7,14 @@ Componentes de Tablescore para aplicaciones Expo y React Native con React Native
 En una aplicación Expo SDK 57:
 
 ```bash
-pnpm add @marianellagl/scoreui react-native-paper @expo/vector-icons
+pnpm add @decodadev02/scoreui react-native-paper @expo/vector-icons
 pnpm expo install expo-font
 ```
 
 ## Uso
 
 ```tsx
-import { ScoreButton, ScoreUIProvider } from '@marianellagl/scoreui';
+import { ScoreButton, ScoreUIProvider } from '@decodadev02/scoreui';
 
 export default function App() {
   return (

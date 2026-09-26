@@ -1,6 +1,6 @@
 {
   "name": "@decodadev02/scoreui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Componentes móviles de Tablescore para React Native y Expo",
   "license": "MIT",
   "main": "./lib/index.js",

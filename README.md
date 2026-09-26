@@ -43,10 +43,13 @@ pnpm --dir package-dist pack --pack-destination ../package-artifacts
 
 Revisá el contenido del `.tgz` en `package-artifacts/`. Para publicarlo desde tu cuenta npm (el usuario o la organización debe controlar `@marianellagl`):
 
+Si guardaste `PUBLIC_NPM_ACCESS_TOKEN` en un `.env` local, publicalo con:
+
 ```bash
-pnpm login
-pnpm --dir package-dist publish --access public --no-git-checks
+pnpm publish:package
 ```
+
+El script carga `.env` solo para ese proceso y usa el token mediante una referencia en `.npmrc`; `.env` está ignorado por Git. Si preferís iniciar sesión de forma interactiva, también podés usar `pnpm login` y `pnpm --dir package-dist publish --access public --no-git-checks`.
 
 La publicación puede pedir 2FA. Para la siguiente versión, incrementá `version` en `package/package.json`, volvé a ejecutar `pnpm build:package` y repetí el publish. El paquete apunta a Expo SDK 57 y React Native 0.86.
 

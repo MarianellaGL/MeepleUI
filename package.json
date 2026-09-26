@@ -54,6 +54,7 @@
     "build-storybook": "pnpm build:storybook:web",
     "chromatic": "chromatic --build-script-name build-storybook",
     "build:package": "tsc -p tsconfig.package.json && node scripts/stage-package.mjs",
+    "publish:package": "node --env-file=.env scripts/publish-package.mjs",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit"
   },

@@ -1,6 +1,6 @@
 {
-  "name": "scoreui",
-  "description": "Tablescore mobile components and native Storybook",
+  "name": "meepleui",
+  "description": "MeepVP mobile design system and native Storybook",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {

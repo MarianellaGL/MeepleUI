@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreCalendar } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Fechas/Calendario',
+  title: 'MeepleUI/Fechas/Calendario',
   component: ScoreCalendar,
   args: { initialMonth: '2026-09', selectedDate: '2026-09-26' },
 } satisfies Meta<typeof ScoreCalendar>;

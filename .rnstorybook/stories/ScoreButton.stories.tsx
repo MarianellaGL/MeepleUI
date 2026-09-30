@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ScoreButton } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Acciones/Botón',
+  title: 'MeepleUI/Acciones/Botón',
   component: ScoreButton,
   args: { label: 'Nueva partida' },
 } satisfies Meta<typeof ScoreButton>;

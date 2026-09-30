@@ -8,7 +8,7 @@ const options = [
   { label: 'd20 · Icosaedro', value: 'd20' },
 ];
 const meta = {
-  title: 'Tablescore/Formularios/Dropdown',
+  title: 'MeepleUI/Formularios/Dropdown',
   component: ScoreDropdown,
   args: { label: 'Tipo de dado', value: 'd20', options },
 } satisfies Meta<typeof ScoreDropdown>;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreSkeleton } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Estado/Skeleton',
+  title: 'MeepleUI/Estado/Skeleton',
   component: ScoreSkeleton,
   args: { variant: 'text' },
 } satisfies Meta<typeof ScoreSkeleton>;

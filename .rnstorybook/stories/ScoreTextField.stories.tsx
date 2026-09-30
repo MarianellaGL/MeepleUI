@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreTextField } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Formularios/Campo de texto',
+  title: 'MeepleUI/Formularios/Campo de texto',
   component: ScoreTextField,
   args: { label: 'Nombre de la partida', value: '', placeholder: 'Noche de dados' },
 } satisfies Meta<typeof ScoreTextField>;

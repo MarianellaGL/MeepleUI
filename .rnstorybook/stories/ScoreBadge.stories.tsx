@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ScoreBadge } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Estado/Badge',
+  title: 'MeepleUI/Estado/Badge',
   component: ScoreBadge,
   args: { label: 'En curso' },
 } satisfies Meta<typeof ScoreBadge>;

@@ -44,8 +44,7 @@ function TabItem({ item, selected, onSelect, reducedMotion }: { item: NavItem; s
     >
       <Animated.View style={{ transform: [{ scale }] }}>
         {center ? (
-          <View style={styles.die}>
-            <View style={styles.pipLeft} /><View style={styles.pipRight} /><View style={styles.pipBottomLeft} /><View style={styles.pipBottomRight} />
+          <View style={styles.createAction}>
             <MaterialCommunityIcons name="plus" color={tokens.color.primaryText} size={25} />
           </View>
         ) : <MaterialCommunityIcons name={item.icon} color={tint} size={24} />}
@@ -69,9 +68,5 @@ const styles = StyleSheet.create({
   item: { minWidth: 58, minHeight: 72, flex: 1, alignItems: 'center', justifyContent: 'center', gap: 5 },
   centerItem: { flex: 1.4 },
   label: { fontFamily: tokens.font.medium, fontSize: 12, letterSpacing: 0.4, textAlign: 'center' },
-  die: { width: 44, height: 44, borderRadius: 10, backgroundColor: tokens.color.redDark, alignItems: 'center', justifyContent: 'center', marginTop: -10 },
-  pipLeft: { position: 'absolute', width: 3, height: 3, borderRadius: 2, backgroundColor: tokens.color.primaryText, left: 6, top: 6 },
-  pipRight: { position: 'absolute', width: 3, height: 3, borderRadius: 2, backgroundColor: tokens.color.primaryText, right: 6, top: 6 },
-  pipBottomLeft: { position: 'absolute', width: 3, height: 3, borderRadius: 2, backgroundColor: tokens.color.primaryText, left: 6, bottom: 6 },
-  pipBottomRight: { position: 'absolute', width: 3, height: 3, borderRadius: 2, backgroundColor: tokens.color.primaryText, right: 6, bottom: 6 },
+  createAction: { width: 44, height: 44, borderRadius: 12, backgroundColor: tokens.color.meepleRed, alignItems: 'center', justifyContent: 'center', marginTop: -10 },
 });

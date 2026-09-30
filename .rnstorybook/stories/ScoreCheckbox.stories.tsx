@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreCheckbox } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Formularios/Checkbox',
+  title: 'MeepleUI/Formularios/Checkbox',
   component: ScoreCheckbox,
   args: { label: 'Guardar jugador para próximas partidas', checked: false },
 } satisfies Meta<typeof ScoreCheckbox>;

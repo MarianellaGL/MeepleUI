@@ -1,5 +1,11 @@
-export { ScoreUIProvider } from './ScoreUIProvider';
-export { scoreUITheme, tokens } from './theme';
+export { MeepleUIProvider, ScoreUIProvider } from './MeepleUIProvider';
+export { meepleUITheme, scoreUITheme, tokens } from './theme';
+export { MeepleLogo } from './components/MeepleLogo';
+export type { MeepleLogoProps } from './components/MeepleLogo';
+export { MeepleAvatar } from './components/MeepleAvatar';
+export type { MeepleAvatarProps } from './components/MeepleAvatar';
+export { MeepleGameTile } from './components/MeepleGameTile';
+export type { MeepleGameTileProps } from './components/MeepleGameTile';
 export { ScoreButton } from './components/ScoreButton';
 export type { ScoreButtonProps } from './components/ScoreButton';
 export { ScoreBadge } from './components/ScoreBadge';

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreSwitch } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Formularios/Switch',
+  title: 'MeepleUI/Formularios/Switch',
   component: ScoreSwitch,
   args: { label: 'Sonido de partida', value: true },
 } satisfies Meta<typeof ScoreSwitch>;

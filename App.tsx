@@ -3,18 +3,19 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Text } from 'react-native-paper';
 
-import { ScoreBadge, ScoreButton, ScoreCalendar, ScoreGameCard, ScoreStepper, ScoreUIProvider, tokens } from './src';
+import { MeepleLogo, MeepleUIProvider, ScoreBadge, ScoreButton, ScoreCalendar, ScoreGameCard, ScoreStepper, tokens } from './src';
 
 export default function App() {
   const [date, setDate] = useState('2026-09-26');
   const [score, setScore] = useState(18);
 
   return (
-    <ScoreUIProvider>
+    <MeepleUIProvider>
       <StatusBar style="light" />
       <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-        <Text style={styles.brand}>SCOREUI</Text>
-        <Text style={styles.copy}>Componentes móviles para Tablescore</Text>
+        <MeepleLogo size={64} />
+        <Text style={styles.brand}>MeepleUI</Text>
+        <Text style={styles.copy}>Componentes móviles para MeepVP</Text>
         <View style={styles.badges}>
           <ScoreBadge label="En curso" />
           <ScoreBadge label="Ronda guardada" tone="success" />
@@ -25,7 +26,7 @@ export default function App() {
         <ScoreCalendar initialMonth="2026-09" selectedDate={date} onSelect={setDate} markedDates={['2026-09-04', '2026-09-13', '2026-09-26']} />
         <ScoreButton label="Nueva partida" />
       </ScrollView>
-    </ScoreUIProvider>
+    </MeepleUIProvider>
   );
 }
 

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreStepper } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Puntuar/Control de puntos',
+  title: 'MeepleUI/Puntuar/Control de puntos',
   component: ScoreStepper,
   args: { player: 'Mariana', detail: 'Líder de la mesa', value: 18 },
 } satisfies Meta<typeof ScoreStepper>;

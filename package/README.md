@@ -1,28 +1,29 @@
-# @decodadev02/scoreui
+# @decodadev02/meepleui
 
-Componentes de Tablescore para aplicaciones Expo y React Native con React Native Paper.
+Componentes de MeepVP para aplicaciones Expo y React Native con React Native Paper.
 
 ## Instalación
 
 En una aplicación Expo SDK 57:
 
 ```bash
-pnpm add @decodadev02/scoreui react-native-paper @expo/vector-icons
-pnpm expo install expo-font
+pnpm add @decodadev02/meepleui react-native-paper @expo/vector-icons
+pnpm expo install expo-font react-native-svg
 ```
 
 ## Uso
 
 ```tsx
-import { ScoreButton, ScoreUIProvider } from '@decodadev02/scoreui';
+import { MeepleLogo, MeepleUIProvider, ScoreButton } from '@decodadev02/meepleui';
 
 export default function App() {
   return (
-    <ScoreUIProvider>
+    <MeepleUIProvider>
+      <MeepleLogo size={64} />
       <ScoreButton label="Nueva partida" onPress={() => {}} />
-    </ScoreUIProvider>
+    </MeepleUIProvider>
   );
 }
 ```
 
-Incluye tokens, tema, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/scoreUI).
+Incluye tokens, tema, logo, avatar, fila de juego con carátula, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/scoreUI).

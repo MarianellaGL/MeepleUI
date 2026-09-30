@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "scoreUI",
-    "slug": "scoreUI",
+    "name": "MeepleUI",
+    "slug": "meepleui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

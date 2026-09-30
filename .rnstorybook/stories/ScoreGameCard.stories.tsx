@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreGameCard } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Datos/Tarjeta de partida',
+  title: 'MeepleUI/Datos/Tarjeta de partida',
   component: ScoreGameCard,
   args: { title: 'Noche de dados', detail: '4 jugadores · Ronda 4 de 8', score: 20 },
 } satisfies Meta<typeof ScoreGameCard>;

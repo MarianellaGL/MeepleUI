@@ -1,13 +1,13 @@
 {
-  "name": "@decodadev02/scoreui",
+  "name": "@decodadev02/meepleui",
   "version": "0.1.1",
-  "description": "Componentes móviles de Tablescore para React Native y Expo",
+  "description": "Componentes móviles de MeepVP para React Native y Expo",
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "react-native": "./lib/index.js",
   "files": ["lib", "README.md"],
-  "keywords": ["react-native", "expo", "react-native-paper", "design-system", "tablescore"],
+  "keywords": ["react-native", "expo", "react-native-paper", "design-system", "meepvp"],
   "repository": { "type": "git", "url": "https://github.com/MarianellaGL/scoreUI.git" },
   "publishConfig": { "access": "public" },
   "dependencies": {
@@ -21,6 +21,7 @@
     "expo-font": "~57.0.0",
     "react": "^19.2.0",
     "react-native": "^0.86.0",
+    "react-native-svg": "^15.15.4",
     "react-native-paper": "^5.15.0"
   },
   "sideEffects": false

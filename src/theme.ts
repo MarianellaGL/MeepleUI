@@ -10,6 +10,8 @@ export const tokens = {
     gold: '#FFD47A',
     red: '#F4511E',
     redDark: '#B5253C',
+    meepleRed: '#C52C32',
+    starBrass: '#B99456',
     border: '#65464C',
     success: '#65D88B',
     successSoft: '#1B402D',
@@ -27,7 +29,7 @@ export const tokens = {
   },
 } as const;
 
-export const scoreUITheme = {
+export const meepleUITheme = {
   ...MD3DarkTheme,
   roundness: tokens.radius.medium,
   colors: {
@@ -47,3 +49,6 @@ export const scoreUITheme = {
     error: tokens.color.warning,
   },
 };
+
+/** @deprecated Use meepleUITheme. */
+export const scoreUITheme = meepleUITheme;

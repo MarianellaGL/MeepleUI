@@ -1,6 +1,6 @@
-# scoreUI
+# MeepleUI
 
-Biblioteca móvil de Tablescore, construida con React Native Paper y documentada en React Native Storybook. Los colores y componentes siguen el [diseño de Figma](https://www.figma.com/design/wqZypq5EqdDo3KVGi0oxbE?node-id=14-7).
+Biblioteca móvil de MeepVP, construida con React Native Paper y documentada en React Native Storybook. Los colores y componentes siguen el [design system de Figma](https://www.figma.com/design/wqZypq5EqdDo3KVGi0oxbE).
 
 ## Ver Storybook en el teléfono
 
@@ -34,7 +34,7 @@ No incluyas el token en el comando, en `package.json` ni en Git. Chromatic usa `
 
 ## Preparar el paquete npm
 
-El paquete se publica como `@decodadev02/scoreui`. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
+El nuevo paquete se llama `@decodadev02/meepleui`. Todavía requiere publicación antes de migrar la app móvil desde `@decodadev02/scoreui`. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
 
 ```bash
 pnpm build:package
@@ -55,9 +55,9 @@ La publicación puede pedir 2FA. Para la siguiente versión, incrementá `versio
 
 ### Publicar con GitHub Actions
 
-El workflow [`.github/workflows/publish-npm.yml`](.github/workflows/publish-npm.yml) publica `@decodadev02/scoreui` al subir un tag `vX.Y.Z`. Instala con pnpm, ejecuta lint y typecheck, construye `package-dist/` y comprueba que el tag coincida con `package/package.json`. La publicación usa la autenticación OIDC de npm, sin token en los secrets de GitHub.
+El workflow [`.github/workflows/publish-npm.yml`](.github/workflows/publish-npm.yml) publicará `@decodadev02/meepleui` al subir un tag `vX.Y.Z`, una vez configurado Trusted Publishing para el paquete nuevo. Instala con pnpm, ejecuta lint y typecheck, construye `package-dist/` y comprueba que el tag coincida con `package/package.json`. La publicación usa la autenticación OIDC de npm, sin token en los secrets de GitHub.
 
-En la configuración de **Trusted publishing** del paquete existente `@decodadev02/scoreui`, agregá GitHub Actions con estos valores:
+En la configuración de **Trusted publishing** de `@decodadev02/meepleui`, agregá GitHub Actions con estos valores:
 
 - Usuario u organización de GitHub: `MarianellaGL`
 - Repositorio: `scoreUI`
@@ -75,23 +75,23 @@ Usá la versión real del paquete en lugar de `0.1.2`. GitHub Actions publica el
 
 ## Componentes
 
-El catálogo incluye botón, badge semántico, campo de texto, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. Las stories están en `.rnstorybook/stories`; los componentes y tokens reutilizables están en `src`.
+El catálogo incluye el logo de MeepVP, avatar, fila de juego con carátula, botón, badge semántico, campo de texto, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. Las stories están en `.rnstorybook/stories`; los componentes y tokens reutilizables están en `src`.
 
 Botón, navegación inferior, control de puntos y skeleton incluyen animaciones suaves. Respetan la opción de movimiento reducido del dispositivo.
 
 El calendario acepta fechas ISO (`YYYY-MM-DD`). Sus props principales son `selectedDate`, `onSelect`, `initialMonth`, `minDate`, `maxDate`, `markedDates`, `firstDayOfWeek`, `locale` y `accentColor`.
 
 ```tsx
-import { ScoreCalendar, ScoreUIProvider } from './src';
+import { MeepleUIProvider, ScoreCalendar } from './src';
 
-<ScoreUIProvider>
+<MeepleUIProvider>
   <ScoreCalendar
     selectedDate="2026-09-26"
     onSelect={(date) => console.log(date)}
     markedDates={['2026-09-04', '2026-09-26']}
     firstDayOfWeek={1}
   />
-</ScoreUIProvider>
+</MeepleUIProvider>
 ```
 
 ## Validar

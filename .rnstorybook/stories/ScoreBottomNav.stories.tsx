@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ScoreBottomNav, type ScoreTab } from '../../src';
 
 const meta = {
-  title: 'Tablescore/Navegación/Barra inferior',
+  title: 'MeepleUI/Navegación/Barra inferior',
   component: ScoreBottomNav,
   args: { active: 'home' as ScoreTab },
 } satisfies Meta<typeof ScoreBottomNav>;

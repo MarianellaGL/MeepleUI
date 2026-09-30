@@ -1,4 +1,4 @@
-This is the scoreUI Expo/React Native component library and native Storybook for Tablescore. Prioritize mobile-first patterns, performance, accessibility, and cross-platform compatibility. Use pnpm for every package and project command.
+This is the MeepleUI Expo/React Native component library and native Storybook for MeepVP. Prioritize mobile-first patterns, performance, accessibility, and cross-platform compatibility. Use pnpm for every package and project command.
 
 ## Expo has changed — do not trust your training data
 
@@ -26,7 +26,7 @@ Run lint and typecheck before declaring any task done.
 - Reusable components, tokens, and providers belong in `src/` and are exported from `src/index.ts`.
 - Every public component should have representative states in `.rnstorybook/stories/`.
 - Storybook runs through entry-point swapping and should stay separate from the normal app bundle.
-- Keep the dark Tablescore visual language and semantic success/warning colors consistent with Figma.
+- Keep the dark MeepVP visual language and semantic success/warning colors consistent with Figma.
 
 ## Rules
 

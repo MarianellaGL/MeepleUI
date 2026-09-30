@@ -8,7 +8,7 @@
   "react-native": "./lib/index.js",
   "files": ["lib", "README.md"],
   "keywords": ["react-native", "expo", "react-native-paper", "design-system", "meepvp"],
-  "repository": { "type": "git", "url": "https://github.com/MarianellaGL/scoreUI.git" },
+  "repository": { "type": "git", "url": "https://github.com/MarianellaGL/MeepleUI.git" },
   "publishConfig": { "access": "public" },
   "dependencies": {
     "@expo-google-fonts/cinzel": "^0.4.2",

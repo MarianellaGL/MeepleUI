@@ -34,7 +34,7 @@ No incluyas el token en el comando, en `package.json` ni en Git. Chromatic usa `
 
 ## Preparar el paquete npm
 
-El nuevo paquete se llama `@decodadev02/meepleui`. Todavía requiere publicación antes de migrar la app móvil desde `@decodadev02/scoreui`. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
+El nuevo paquete se llama `@decodadev02/meepleui`. La app móvil lo consume desde `package-dist/` durante el desarrollo local; todavía requiere publicación para instalaciones independientes. La versión y las dependencias públicas se editan en `package/package.json`; el build genera `package-dist/` y no modifica la aplicación Expo del repositorio.
 
 ```bash
 pnpm build:package
@@ -60,7 +60,7 @@ El workflow [`.github/workflows/publish-npm.yml`](.github/workflows/publish-npm.
 En la configuración de **Trusted publishing** de `@decodadev02/meepleui`, agregá GitHub Actions con estos valores:
 
 - Usuario u organización de GitHub: `MarianellaGL`
-- Repositorio: `scoreUI`
+- Repositorio: `MeepleUI`
 - Archivo del workflow: `publish-npm.yml`
 - Acción permitida: `npm publish` (publicación directa)
 

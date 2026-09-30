@@ -26,4 +26,4 @@ export default function App() {
 }
 ```
 
-Incluye tokens, tema, logo, avatar, fila de juego con carátula, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/scoreUI).
+Incluye tokens, tema, logo, avatar, fila de juego con carátula, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/MeepleUI).

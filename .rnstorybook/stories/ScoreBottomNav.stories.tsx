@@ -17,4 +17,5 @@ export const Interactiva: Story = {
   },
 };
 export const Puntuar: Story = { args: { active: 'score' } };
+export const Biblioteca: Story = { args: { active: 'library' } };
 export const NuevaPartida: Story = { args: { active: 'new-game' } };

@@ -6,7 +6,7 @@ import { Text } from 'react-native-paper';
 import { tokens } from '../theme';
 import { useReducedMotion } from '../useReducedMotion';
 
-export type ScoreTab = 'home' | 'history' | 'new-game' | 'score' | 'profile';
+export type ScoreTab = 'home' | 'library' | 'new-game' | 'score' | 'profile';
 export type ScoreBottomNavProps = {
   active: ScoreTab;
   onSelect?: (tab: ScoreTab) => void;
@@ -15,7 +15,7 @@ export type ScoreBottomNavProps = {
 type NavItem = { key: ScoreTab; label: string; icon: React.ComponentProps<typeof MaterialCommunityIcons>['name'] };
 const items: NavItem[] = [
   { key: 'home', label: 'Inicio', icon: 'home-outline' },
-  { key: 'history', label: 'Historial', icon: 'history' },
+  { key: 'library', label: 'Biblioteca', icon: 'bookshelf' },
   { key: 'new-game', label: 'Nueva partida', icon: 'plus' },
   { key: 'score', label: 'Puntuar', icon: 'file-document-edit-outline' },
   { key: 'profile', label: 'Perfil', icon: 'account-outline' },

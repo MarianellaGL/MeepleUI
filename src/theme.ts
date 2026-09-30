@@ -12,6 +12,8 @@ export const tokens = {
     redDark: '#B5253C',
     meepleRed: '#C52C32',
     starBrass: '#B99456',
+    levelBadgeBackground: '#1F1C2E',
+    levelBadgeBorder: '#A67A40',
     border: '#65464C',
     success: '#65D88B',
     successSoft: '#1B402D',

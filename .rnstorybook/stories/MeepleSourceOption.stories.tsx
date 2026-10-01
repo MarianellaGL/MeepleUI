@@ -10,11 +10,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PDF: Story = {};
+export const PDF: Story = { args: { selected: true } };
 export const Foto: Story = { args: { source: 'photo' } };
 export const Manual: Story = { args: { source: 'manual' } };
 export const Todas: Story = { render: () => <View style={{ gap: 12, padding: 20 }}>
-  <MeepleSourceOption source="pdf" onPress={() => {}} />
+  <MeepleSourceOption source="pdf" selected onPress={() => {}} />
   <MeepleSourceOption source="photo" onPress={() => {}} />
   <MeepleSourceOption source="manual" onPress={() => {}} />
 </View> };

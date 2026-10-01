@@ -75,7 +75,7 @@ Usá la versión real del paquete en lugar de `0.1.2`. GitHub Actions publica el
 
 ## Componentes
 
-El catálogo incluye el logo de MeepVP, los 11 íconos de acción y las 10 insignias de nivel del archivo de flujos de Figma, avatar, fila de juego con carátula, botón, badge semántico, campo de texto, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. Las stories están en `.rnstorybook/stories`; los componentes y tokens reutilizables están en `src`.
+El catálogo incluye el logo de MeepVP, los 11 íconos de acción y las 10 insignias de nivel del archivo de flujos de Figma, avatar, fila de juego con carátula, botón, badge semántico, campo de texto, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. También incluye estados de asistencia para carga, revisión y error, una vista previa de campos de puntuación y un control para desplegar opciones secundarias sin llenar la pantalla de botones. Las stories están en `.rnstorybook/stories`; los componentes y tokens reutilizables están en `src`.
 
 Botón, navegación inferior, control de puntos y skeleton incluyen animaciones suaves. Respetan la opción de movimiento reducido del dispositivo.
 

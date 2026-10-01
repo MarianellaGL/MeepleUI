@@ -12,6 +12,8 @@ export type ScoreTextFieldProps = {
   helperText?: string;
   errorText?: string;
   disabled?: boolean;
+  multiline?: boolean;
+  numberOfLines?: number;
   keyboardType?: React.ComponentProps<typeof TextInput>['keyboardType'];
   autoCapitalize?: React.ComponentProps<typeof TextInput>['autoCapitalize'];
   returnKeyType?: React.ComponentProps<typeof TextInput>['returnKeyType'];
@@ -19,7 +21,7 @@ export type ScoreTextFieldProps = {
   style?: React.ComponentProps<typeof TextInput>['style'];
 };
 
-export function ScoreTextField({ label, value, onChangeText, placeholder, helperText, errorText, disabled, keyboardType, autoCapitalize, returnKeyType, onSubmitEditing, style }: ScoreTextFieldProps) {
+export function ScoreTextField({ label, value, onChangeText, placeholder, helperText, errorText, disabled, multiline, numberOfLines, keyboardType, autoCapitalize, returnKeyType, onSubmitEditing, style }: ScoreTextFieldProps) {
   return (
     <View>
       <TextInput
@@ -29,6 +31,8 @@ export function ScoreTextField({ label, value, onChangeText, placeholder, helper
         onChangeText={onChangeText}
         placeholder={placeholder}
         disabled={disabled}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         returnKeyType={returnKeyType}

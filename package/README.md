@@ -26,4 +26,4 @@ export default function App() {
 }
 ```
 
-Incluye tokens, tema, logo, íconos de acción, insignias de nivel, avatar, fila de juego con carátula, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/MeepleUI).
+Incluye tokens, tema, logo, íconos de acción, insignias de nivel, avatar, fila de juego con carátula, botón, badge, inputs, checkbox, switch, dropdown, tarjeta de partida, control de puntos, navegación inferior, skeleton y calendario. Para importar reglamentos y planillas incluye `MeepleAssistStatus`, `MeepleScoringPreview` y `MeepleDisclosure`. El catálogo y las stories están en el [repositorio](https://github.com/MarianellaGL/MeepleUI).

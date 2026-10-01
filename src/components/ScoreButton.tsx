@@ -7,7 +7,7 @@ import { useReducedMotion } from '../useReducedMotion';
 
 export type ScoreButtonProps = {
   label: string;
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
   disabled?: boolean;
   loading?: boolean;
   icon?: string;
@@ -23,11 +23,12 @@ export function ScoreButton({
   onPress,
 }: ScoreButtonProps) {
   const outlined = variant === 'secondary';
+  const textOnly = variant === 'tertiary';
   const [scale] = useState(() => new Animated.Value(1));
   const reducedMotion = useReducedMotion();
 
   function animatePress(toValue: number) {
-    if (reducedMotion || disabled) return;
+    if (reducedMotion || disabled || loading) return;
     Animated.spring(scale, {
       toValue,
       speed: 28,
@@ -39,15 +40,15 @@ export function ScoreButton({
   return (
     <Animated.View style={{ transform: [{ scale }] }}>
     <Button
-      mode={outlined ? 'outlined' : 'contained'}
+      mode={textOnly ? 'text' : outlined ? 'outlined' : 'contained'}
       icon={icon}
-      disabled={disabled}
+      disabled={disabled || loading}
       loading={loading}
       onPress={onPress}
       onPressIn={() => animatePress(0.97)}
       onPressOut={() => animatePress(1)}
-      buttonColor={variant === 'danger' ? tokens.color.redDark : tokens.color.red}
-      textColor={outlined ? tokens.color.gold : tokens.color.canvas}
+      buttonColor={textOnly || outlined ? undefined : variant === 'danger' ? tokens.color.redDark : tokens.color.red}
+      textColor={outlined || textOnly ? tokens.color.gold : tokens.color.canvas}
       style={[styles.button, outlined && styles.outlined]}
       contentStyle={styles.content}
       labelStyle={styles.label}

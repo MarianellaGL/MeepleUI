@@ -2,10 +2,10 @@ import { MD3DarkTheme } from 'react-native-paper';
 
 export const tokens = {
   color: {
-    canvas: '#100D19',
-    surface: '#231928',
-    elevated: '#322233',
-    primaryText: '#FFF4E1',
+    canvas: '#080B15',
+    surface: '#100D1C',
+    elevated: '#241024',
+    primaryText: '#FFF9F0',
     secondaryText: '#BCAFB9',
     gold: '#FFD47A',
     red: '#F4511E',
@@ -14,7 +14,8 @@ export const tokens = {
     starBrass: '#B99456',
     levelBadgeBackground: '#1F1C2E',
     levelBadgeBorder: '#A67A40',
-    border: '#65464C',
+    border: '#411B2C',
+    brand: '#F2A84B',
     success: '#65D88B',
     successSoft: '#1B402D',
     warning: '#FF6F66',

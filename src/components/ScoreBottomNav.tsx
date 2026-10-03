@@ -14,7 +14,7 @@ const items: { key: ScoreTab; label: string; accessibilityLabel: string; icon?: 
   { key: 'home', label: 'Inicio', accessibilityLabel: 'Inicio', icon: 'home-outline' },
   { key: 'library', label: 'Biblioteca', accessibilityLabel: 'Biblioteca' },
   { key: 'new-game', label: 'Nuevo', accessibilityLabel: 'Nueva partida' },
-  { key: 'score', label: 'Mesa', accessibilityLabel: 'Mesa', icon: 'file-document-edit-outline' },
+  { key: 'score', label: 'Partidas', accessibilityLabel: 'Partidas', icon: 'file-document-edit-outline' },
   { key: 'profile', label: 'Perfil', accessibilityLabel: 'Perfil', icon: 'account-outline' },
 ];
 
